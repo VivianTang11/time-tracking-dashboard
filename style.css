@@ -12,6 +12,7 @@
     
     --body-bg: hsl(226, 43%, 10%);
     --card-bg: hsl(235, 46%, 20%);
+    --card-hover-bg: hsl(237, 43%, 31%);
 
     --text-primary: whitesmoke;
     --text-secondary: hsl(235, 45%, 61%);
@@ -80,6 +81,11 @@ main{
     display: flex;
     justify-content: space-between;
 }
+.filter > ul > li:hover{
+    cursor: pointer;
+    color: var(--text-primary);
+
+}
 
 .all-cards{
     display: grid;
@@ -135,6 +141,15 @@ main{
     padding: 1.5rem 2rem;
 }
 
+.card-content:hover{
+    cursor: pointer;
+    background-color: var(--card-hover-bg);
+}
+
+.ellipsis:hover{
+    cursor: pointer;
+}
+
 .card-top, .card-bottom{
     display: flex;
     justify-content: space-between;
@@ -185,6 +200,8 @@ footer > a{
     .card-content{
         padding: 1.5rem 1rem;
     }
+
+
 }
 
 @media screen and (min-width: 700px) {
