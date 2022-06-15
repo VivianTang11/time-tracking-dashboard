@@ -13,11 +13,14 @@
     --body-bg: hsl(226, 43%, 10%);
     --card-bg: hsl(235, 46%, 20%);
 
-    --text-1: hsl(235, 45%, 61%);
-    --text-2: hsl(236, 100%, 87%); 
+    --text-primary: whitesmoke;
+    --text-secondary: hsl(235, 45%, 61%);
+    --text-tertiary: hsl(236, 100%, 87%); 
 
     --font: 'Rubik', sans-serif;
     --size-card-title: 18px;
+
+    --radius: 1rem;
 }
 
 
@@ -26,4 +29,210 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
+}
+
+body{
+    background-color: var(--body-bg);
+
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: 5rem 0;
+}
+
+
+.profile-filter{
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    margin: 0 1.5rem;
+}
+.profile{
+    padding: 1.5rem 2rem;
+    background-color: var(--profile-bg);
+    border-radius: var(--radius);
+
+    display: flex;
+    align-items: center;
+}
+.profile-img{
+    border: white 0.2rem solid;
+    border-radius: 50%;
+    height: 4rem;
+}
+.profile-text{
+    color: var(--text-primary);
+    margin-left: 1rem;
+}
+.profile-text > .report{
+    color: var(--text-secondary);
+}
+.profile-text > .name{
+    font-weight: 300;
+}
+.filter{
+    padding: 1.5rem 2rem;    
+}
+.filter > ul{
+    list-style: none;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.all-cards{
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.card-container{
+    position: relative;
+    height: 9rem;
+    width: auto;
+    margin: 0 1.5rem;
+    border-radius: var(--radius);
+}
+.work{
+    background: no-repeat url(./images/icon-work.svg);
+    background-position: 95% -10%;
+    background-color: var(--work-bg);
+}
+.play{
+    background: no-repeat url(./images/icon-play.svg);
+    background-position: 95% -10%;
+    background-color: var(--play-bg);
+}
+.study{
+    background: no-repeat url(./images/icon-study.svg);
+    background-position: 95% -10%;
+    background-color: var(--study-bg);
+}
+.exercise{
+    background: no-repeat url(./images/icon-exercise.svg);
+    background-position: 95% -10%;
+    background-color: var(--exercise-bg);
+}
+.social{
+    background: no-repeat url(./images/icon-social.svg);
+    background-position: 95% -10%;
+    background-color: var(--social-bg);
+}
+.self{
+    background: no-repeat url(./images/icon-self-care.svg);
+    background-position: 95% -10%;
+    background-color: var(--self-bg);
+}
+.card-content{
+    background-color: var(--card-bg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+}
+
+.card-top, .card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-bottom{
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.current{
+    font-weight: 300;
+    font-size: 2rem;
+    
+}
+
+.current, .title{
+    color: var(--text-primary);
+}
+.previous{
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+
+footer{
+    font-size: 12px;
+    color: var(--text-primary);
+    font-style: italic;
+}
+footer > a{
+    color: whitesmoke;
+}
+
+@media screen and (min-width: 500px) {
+    .report{
+        font-size: 0.8rem;
+    }
+    .all-cards{
+        grid-template-columns: repeat(2,auto);
+    }
+    .card-content{
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    main{
+        display: flex;
+        justify-content: center;
+    }
+    .profile{
+        flex-direction: column;
+        align-items:flex-start;
+        padding: 1.5rem;
+    }
+    .profile-text{
+        margin: 1rem 0 2rem 0;
+        max-width: 10rem;
+    }
+
+    .filter{
+        padding: 1.5rem;
+    }
+    .filter > ul{
+        flex-direction: column;
+    }
+    .filter > ul > li{
+        margin: 0.5rem 0;
+    }    
+
+    .all-cards{
+        margin: 0;
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+    }
+    .card-container{
+        height: 12rem;
+        max-width: 14rem;
+        min-width: 14rem;
+        margin: auto;
+    }
+    .card-bottom{
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .all-cards{
+        grid-template-columns: repeat(3,auto);
+    }
 }
